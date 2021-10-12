@@ -1,5 +1,3 @@
-let teendok = "";
-
 function kitorol(e) {
     e.target.parentNode.remove();
 }
@@ -25,9 +23,11 @@ function listabaTolt() {
     let gomb = document.createElement("button");
     gomb.addEventListener("click", kitorol);
     gomb.innerHTML = "X";
+    let hr = document.createElement("hr");
     resz.appendChild(kipipal);
     resz.appendChild(szoveg);
     resz.appendChild(gomb);
+    resz.appendChild(hr);
     document.getElementById("feladatok").appendChild(resz);
 }
 
