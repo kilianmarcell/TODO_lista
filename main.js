@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+    document.getElementById("gombAdd").addEventListener("click", kattint);
+}
+
+function kattint() {
+    listabaTolt()
+    beviteliMezoUres();
+}
+
 function kitorol(e) {
     e.target.parentNode.remove();
 }
@@ -34,14 +45,3 @@ function listabaTolt() {
 function beviteliMezoUres() {
     document.getElementById("bevitel").value = "";
 }
-
-function kattint() {
-    listabaTolt()
-    beviteliMezoUres();
-}
-
-function init() {
-    document.getElementById("gombAdd").addEventListener("click", kattint);
-}
-
-document.addEventListener("DOMContentLoaded", init);
