@@ -3,13 +3,10 @@ function listabaTolt() {
     let kipipal = document.createElement("input");
     kipipal.setAttribute("type", "checkbox");
     kipipal.style.marginRight = "10px";
-    kipipal.addEventListener("change", kipipal);
     let szoveg = document.createElement("label");
     szoveg.style.marginRight = "100px";
     szoveg.innerHTML = document.getElementById("bevitel").value;
     let gomb = document.createElement("button");
-    gomb.addEventListener("click", kitorol);
-    gomb.innerHTML = "X";
     resz.appendChild(kipipal);
     resz.appendChild(szoveg);
     resz.appendChild(gomb);
