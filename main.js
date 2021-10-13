@@ -29,7 +29,7 @@ function listabaTolt() {
 
   let gomb = document.createElement("button");
   gomb.addEventListener("click", kitorol);
-  gomb.innerHTML = "X";
+  gomb.innerHTML = "x";
   resz.appendChild(gomb);
 
   let hr = document.createElement("hr");
