@@ -17,7 +17,12 @@ function kipipal(e) {
 }
 
 function listabaTolt() {
-    let resz = document.createElement("div");
+    if (document.getElementById("bevitel").value == "") {
+        alert("Kérem töltse ki a bemeneti mezőt!");
+        return;
+    }
+
+    let resz = document.createElement("label");
 
     let kipipal = document.createElement("input");
     kipipal.setAttribute("type", "checkbox");
