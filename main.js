@@ -5,15 +5,8 @@ function init() {
 }
 
 function kattint() {
-    listabaTolt()
+    listabaTolt();
     beviteliMezoUres();
-}
-
-function kitorol(e) {
-    e.target.parentNode.remove();
-}
-
-function kipipal(e) {
 }
 
 function listabaTolt() {
@@ -22,29 +15,38 @@ function listabaTolt() {
         return;
     }
 
-    let resz = document.createElement("label");
+    let resz = document.createElement("div");
+    resz.className = "reszClass";
 
     let kipipal = document.createElement("input");
     kipipal.setAttribute("type", "checkbox");
-    kipipal.style.marginRight = "10px";
-    kipipal.addEventListener("click", kipipal);
-
+    kipipal.addEventListener("click", kipipalFunction);
+    resz.appendChild(kipipal);
+    
     let szoveg = document.createElement("label");
     szoveg.style.marginRight = "100px";
     szoveg.innerHTML = document.getElementById("bevitel").value;
-
+    resz.appendChild(szoveg);
+    
     let gomb = document.createElement("button");
     gomb.addEventListener("click", kitorol);
     gomb.innerHTML = "X";
-
-    let hr = document.createElement("hr");
-
-    resz.appendChild(kipipal);
-    resz.appendChild(szoveg);
     resz.appendChild(gomb);
+    
+    let hr = document.createElement("hr");
     resz.appendChild(hr);
 
     document.getElementById("feladatok").appendChild(resz);
+}
+
+function kitorol(e) {
+    e.target.parentNode.remove();
+}
+
+function kipipalFunction(e) {
+    let sor = e.target.parentNode;
+    let szoveg = sor.getElementsByTagName("label")[0];
+    szoveg.classList.toggle("athuzott");
 }
 
 function beviteliMezoUres() {
