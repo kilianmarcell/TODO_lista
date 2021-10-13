@@ -1,54 +1,53 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-    document.getElementById("gombAdd").addEventListener("click", kattint);
+  document.getElementById("gombAdd").addEventListener("click", kattint);
 }
 
 function kattint() {
-    listabaTolt();
-    beviteliMezoUres();
+  listabaTolt();
+  beviteliMezoUres();
 }
 
 function listabaTolt() {
-    if (document.getElementById("bevitel").value == "") {
-        alert("Kérem töltse ki a bemeneti mezőt!");
-        return;
-    }
+  if (document.getElementById("bevitel").value == "") {
+    alert("Kérem töltse ki a bemeneti mezőt!");
+    return;
+  }
 
-    let resz = document.createElement("div");
-    resz.className = "reszClass";
+  let resz = document.createElement("div");
+  resz.className = "reszClass";
 
-    let kipipal = document.createElement("input");
-    kipipal.setAttribute("type", "checkbox");
-    kipipal.addEventListener("click", kipipalFunction);
-    resz.appendChild(kipipal);
-    
-    let szoveg = document.createElement("label");
-    szoveg.style.marginRight = "100px";
-    szoveg.innerHTML = document.getElementById("bevitel").value;
-    resz.appendChild(szoveg);
-    
-    let gomb = document.createElement("button");
-    gomb.addEventListener("click", kitorol);
-    gomb.innerHTML = "X";
-    resz.appendChild(gomb);
-    
-    let hr = document.createElement("hr");
-    resz.appendChild(hr);
+  let kipipal = document.createElement("input");
+  kipipal.setAttribute("type", "checkbox");
+  kipipal.addEventListener("click", kipipalFunction);
+  resz.appendChild(kipipal);
 
-    document.getElementById("feladatok").appendChild(resz);
+  let szoveg = document.createElement("label");
+  szoveg.innerHTML = document.getElementById("bevitel").value;
+  resz.appendChild(szoveg);
+
+  let gomb = document.createElement("button");
+  gomb.addEventListener("click", kitorol);
+  gomb.innerHTML = "X";
+  resz.appendChild(gomb);
+
+  let hr = document.createElement("hr");
+  resz.appendChild(hr);
+
+  document.getElementById("feladatok").appendChild(resz);
 }
 
 function kitorol(e) {
-    e.target.parentNode.remove();
+  e.target.parentNode.remove();
 }
 
 function kipipalFunction(e) {
-    let sor = e.target.parentNode;
-    let szoveg = sor.getElementsByTagName("label")[0];
-    szoveg.classList.toggle("athuzott");
+  let sor = e.target.parentNode;
+  let szoveg = sor.getElementsByTagName("label")[0];
+  szoveg.classList.toggle("athuzott");
 }
 
 function beviteliMezoUres() {
-    document.getElementById("bevitel").value = "";
+  document.getElementById("bevitel").value = "";
 }

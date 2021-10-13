@@ -1,3 +1,38 @@
+html button {
+  border: none;
+}
+
+#szelesseg {
+  margin: auto;
+  width: 70%;
+}
+
+#feladatok button {
+  float: right;
+}
+
+#feladatok input {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  margin-right: 20px;
+}
+
+#bevitel {
+  outline: none;
+  margin: none;
+  width: 65%;
+}
+
+#gombAdd {
+  margin: none;
+  width: 25%;
+}
+
+selection {
+  margin: auto;
+}
+
 .athuzott {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
